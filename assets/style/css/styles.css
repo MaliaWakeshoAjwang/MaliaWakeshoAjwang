@@ -1,0 +1,51 @@
+/* Basic styling for the portfolio section */
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Styling for each carousel row */
+.carousel-row {
+    display: flex;
+    gap: 10px;
+    animation: scroll-right 15s linear infinite;
+}
+
+/* Reverse the direction for the second row */
+.reverse {
+    animation: scroll-left 15s linear infinite;
+}
+
+/* Thumbnail styling */
+.thumbnail {
+    display: block;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for the portfolio section */
+@keyframes scroll-right {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
