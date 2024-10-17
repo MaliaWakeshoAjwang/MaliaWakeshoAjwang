@@ -1,51 +1,89 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    margin: 1rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
 /* Basic styling for the portfolio section */
-.portfolio{
+#mini-portfolio{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.5rem;
     overflow: hidden;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Styling for each carousel row */
 .carousel-row {
     display: flex;
-    gap: 10px;
-    animation: scroll-right 15s linear infinite;
+    gap: 1rem;
+    flex-shrink: 0;
+    animation: scroll-loop 20s linear infinite;
 }
 
-/* Reverse the direction for the second row */
-.reverse {
-    animation: scroll-left 15s linear infinite;
+/* Flow direction for the second row */
+.toRight {
+    animation: scroll-right;
+}
+.toLeft {
+    animation: scroll-left;
 }
 
 /* Thumbnail styling */
 .thumbnail {
     display: block;
+    position: relative;
     width: 200px;
     height: 150px;
     overflow: hidden;
-    transition: transform 0.3s;
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #e0e0e0; /* Subtle border */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .thumbnail img {
-    width: 100%;
-    height: auto;
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the thumbnail */
+    transition: opacity 0.3s;
 }
 
 .thumbnail:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
 }
 
+.thumbnail .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.9;
+}
 /* Animation for the portfolio section */
 @keyframes scroll-right {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 @keyframes scroll-left {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
 }
