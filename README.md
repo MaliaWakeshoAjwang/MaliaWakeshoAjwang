@@ -1,7 +1,7 @@
 # Hi, I’m Malia 👋
 
 I’m a **Founder, Developer, and Researcher** passionate about building technology that empowers students and communities.  
-Currently, I’m leading **[asoma](https://asoma.app/)**, a mission-driven startup developing tools to help neurodivergent students manage focus, time, and wellbeing.  
+Currently, I’m leading **[asoma](https://asoma.uk/)**, a mission-driven startup developing tools to help neurodivergent students manage focus, time, and wellbeing.  
 
 Alongside my startup work, I also serve as a **Tech Consultant at the Emory Hatchery (Innovation, Creativity & Futures program)** where I help other founders bring their ideas to life through app flow design, wireframing, GitHub project setup, and technical advising.  
 
