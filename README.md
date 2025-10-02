@@ -38,9 +38,7 @@ Alongside my startup work, I also serve as a **Tech Consultant at the Emory Hatc
 ---
 
 ## 📫 Connect
-- 🌐 Website: [asoma.app](https://asoma.app/)  
 - 💼 LinkedIn: [linkedin.com/in/malia-ajwang](https://www.linkedin.com/in/malia-wakesho-ajwang/)  
-- 🐦 Twitter: [@asoma_digital](https://twitter.com/asoma_digital)  
 
 ---
 
