@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Doe - Timeline of Growth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0.25rem;
+            width: 2px;
+            height: 100%;
+            background-color: #D1D5DB;
+            border-radius: 9999px;
+            z-index: 0;
+        }
+        .timeline-item:last-child:before {
+            height: 50%;
+        }
+        .timeline-marker {
+            position: absolute;
+            top: 0.5rem;
+            left: 0;
+            width: 1rem;
+            height: 1rem;
+            background-color: #3B82F6;
+            border-radius: 9999px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeline-item.dark .timeline-item:before {
+            background-color: #4B5563;
+        }
+        .carousel {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans antialiased">
+<div class="flex min-h-screen">
+<div id="nav-placeholder"></div>
+<main class="w-3/4 lg:w-4/5 xl:w-5/6 ml-auto p-8 lg:p-12">
+<div class="max-w-4xl mx-auto">
+<header class="mb-12">
+<h1 class="text-5xl md:text-6xl font-display font-bold">Timeline of Growth</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A journey through my development as a software engineer, highlighting key projects and the skills I've gained along the way.</p>
+</header>
+<div class="space-y-12">
+<div class="timeline-item">
+<div class="timeline-marker">
+<span class="material-symbols-outlined text-white text-xs">code</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+<h3 class="text-2xl font-bold text-primary dark:text-primary-light">Personal Portfolio Website</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Summer 2022 - First Steps in Web Development</p>
+<div class="relative group">
+<div class="carousel w-full overflow-x-auto flex rounded-md mb-2">
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApugU9MOfHR9l7lAx5sr4mBXoMLWnkVqRYfTHlnnQteKyPyKftma1hlCnIOMkvtgrn8-i6ttFkhPGon9DCy0p_cKlwo8YT-3p6baLcHh_j4QS7Dvs51bYfbyXnjLEVE9EEexguiGXTIOAMXNAMofJPxa8vt3ebEYtmHR_uOJzbvKNEVDKYdiBV3SnJ0zqb0klwMkLqmq40RE_OBAqclC0iWjWA_uMhDeJ7JHuui214aXPSmsjMIw-_ju69Z3XKolPHEp6_nbVTxjk"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd2tEaw6-tepvhqtLv1ftJcl2bbo-9fCZOKCLTHkzXuNiK9rFX7TuuRv175l_vqCmvdp1tnBdKvKFMf_j5j_Gg8Nfz-63O3RnsKnM-z8nttONRj3dV0h1tCq6DMtfu5ZuQHzOdMmDlH-MLmJ499mFnd9CnK_OxoYxHn60VrlHpBG0z49IXLBO4Caqk5I8o4FQBaAcCtkCIrrsbonAkPoGkn0-o2NkTDtfaarbb8zpnzLrllY6bus8uYpyIVUjB468zZv1Nvp5rSEw"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<video autoplay="" class="w-full h-full object-cover" loop="" muted="" playsinline="" src="https://videos.pexels.com/video-files/3254013/3254013-uhd_2732_1440_25fps.mp4"></video>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: -this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</div>
+<p class="mt-2 text-gray-600 dark:text-gray-400">The very site you are on. This project was my initial dive into modern web development, focusing on responsive design and clean user interfaces.</p>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+<ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+<li>HTML5 Semantic Structure</li>
+<li>CSS3 &amp; Responsive Design (Tailwind CSS)</li>
+<li>Basic JavaScript DOM manipulation</li>
+<li>Version Control (Git)</li>
+</ul>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">HTML</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Tailwind CSS</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">JavaScript</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Git</span>
+</div>
+</div>
+<a class="inline-flex items-center mt-6 font-semibold text-primary hover:underline" href="#"> View Project <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">
+<span class="material-symbols-outlined text-white text-xs">shopping_cart</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+<h3 class="text-2xl font-bold text-primary dark:text-primary-light">E-commerce Platform</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Fall 2022 - Diving into Full-Stack Development</p>
+<div class="relative group">
+<div class="carousel w-full overflow-x-auto flex rounded-md mb-2">
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEWPEwMaemO7wAFYA9KN7m34qHrRspBCSomHBiYvhc9aBEmKXqX8XQhRFB7c9QBgjXLXjhtX5pgKslbX2q7zn7lURiMPQTNUyjfLmeqX2REt4JJwoSqabpwa33m4GDHRYjEIDal7mA50oT4wcu6mTMrEpCWbPp7REvUm6aiy7AdtM0kgy-qA7kxu40OOpdIrz1rQYsq6l91_5NLbpf2VrHdCxmXS-hQ4YMJchfv2ZVLY3PxLB3jlGemsUungGjvLVYl8LcCOxS6Yg"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3j4x5JbmiO9ABI4GSc1gjQIdrSSWGNxZ1-9jaSRBCPsD1kvBH_s7Pk2vTL_N6w45vj20VGvfa4eOBcZ1b25hQI1iVuQK_J-UDqFajWVNE7s32SPIumj6V9ZQVQxY5qCKjHHpzuyn9SBfBpd2y3FDiYKoMlup7zCVLOC1ARbEoa_0AgbJ1wGtpaEBr6hfEG3lg7e0QbUWQ9yfzhZB2k_H6YIkRDtyvfttv5lBNy_LxpV1MKeAbugduESIX3GNHQgZKoYIrZhsxJIQ"/>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: -this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</div>
+<p class="mt-2 text-gray-600 dark:text-gray-400">A full-stack e-commerce solution with features like product catalog, shopping cart, and payment gateway integration. This project significantly deepened my understanding of database management and API design.</p>
+<div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-4">Client Testimonial</h4>
+<blockquote class="border-l-4 border-primary pl-4 italic text-gray-600 dark:text-gray-400">
+<p>"Alex delivered an exceptional product that exceeded our expectations. The platform is robust, user-friendly, and has significantly boosted our online sales."</p>
+<footer class="mt-2 text-sm">
+<div class="flex items-center">
+<img alt="Client Company Logo" class="h-8 w-8 mr-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcKSspGI_RlEokz0N4sHvdqTqaHN7qzfuIJvLKrS4QUrq_d7RoEKsXul6O5d5YjJOW6dXE892g1T195C-lvoZxJtQT8heywx3-ZbQQ3J5naFAyCjuNaTqCeXiRgPACnHcMAn0DmahwB_Nh83I1Lcs37Yx5Q0DPqCDgh-XZw1veNV5HqxHFCdWPo9m9jNIsLtYqLIRRjrEL-s42_mC-_iTTwXuv4oobgL8w0-4_vV8VNqtpp3eKKeg5Tp1bpI7ZRX0Zvj_JJbmz7U8"/>
+<span>Sarah Johnson, CEO of ShopSphere</span>
+</div>
+</footer>
+</blockquote>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+<ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+<li>Backend Development (Node.js/Express)</li>
+<li>Database Management (MongoDB)</li>
+<li>RESTful API Design</li>
+<li>Frontend Frameworks (React)</li>
+<li>Payment Gateway Integration</li>
+</ul>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Node.js</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Express.js</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">React.js</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">MongoDB</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Stripe API</span>
+</div>
+</div>
+<a class="inline-flex items-center mt-6 font-semibold text-primary hover:underline" href="#"> Learn More <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">
+<span class="material-symbols-outlined text-white text-xs">sports_handball</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+<h3 class="text-2xl font-bold text-primary dark:text-primary-light">Mobile Fitness App</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Spring 2023 - Exploring Mobile Development</p>
+<div class="relative group">
+<div class="carousel w-full overflow-x-auto flex rounded-md mb-2">
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3QZApRZTcb6SHxTFhPjBr6AW8j27hlCiW4yFiSjj0ZAh0pf8zs8ie05oQrCgncUTHGbS9DFHsD5RzEt6yurRc_rHy3K7ssSJPB3KjmnQrRFU86STER-8dit1erS6ofv1Co4rlBR0IGubUmO_kwQ9Y3GdBMVej8WfPg8wnYmzXo7LsaO-Rv7M88bnj-uoo90jTqcxQHpqC6eDVheAUK8Dxz4aMDnSWHj_DbtcvbLCsGaJFqDODfzQMnoGA05F00859_PktWxugl84"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZiiQ1nlsiq0f7eL1x0tuSL7oAipeqZyfl3xfqD3fIu-EXMolcabByt0Zidl5P8pzrqkgDEgDIlU80LlB96nPPXDKhEJF0VrJKWvMH5qBPi650ir7FUdQdofMwDF0owqPRQa-8l3QDFrAO2QQoZis7UENzHLkHaWkyo8GAJoOXlc1nr4WovraLzdak2XmemjJKsn7ioLNllvYNZ4kVyTxsiK7GpWt9iBoPgVY2Jixn8Y_j-9_4HcH3v4v-dI5O6Fp4dYrFkMsOHY8"/>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: -this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</div>
+<p class="mt-2 text-gray-600 dark:text-gray-400">A cross-platform mobile app to track workouts, set fitness goals, and monitor progress. This project challenged me to consider user experience on smaller screens and optimize for performance.</p>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+<ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+<li>Mobile UI/UX Design</li>
+<li>Cross-platform Development</li>
+<li>State Management in React Native</li>
+<li>Local Storage &amp; Data Persistence</li>
+</ul>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">React Native</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Expo</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">AsyncStorage</span>
+</div>
+</div>
+<a class="inline-flex items-center mt-6 font-semibold text-primary hover:underline" href="#"> View Project <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">
+<span class="material-symbols-outlined text-white text-xs">bar_chart</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+<h3 class="text-2xl font-bold text-primary dark:text-primary-light">Data Visualization Dashboard</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Summer 2023 - Mastering Data Presentation</p>
+<div class="relative group">
+<div class="carousel w-full overflow-x-auto flex rounded-md mb-2">
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY5F24tG52bjCifP0jkhEiBgd6xsrN6sUOOG6fN_i9Bux1HjtkWJ5rlNE1hqCVnlbBUmIJxl_lCwuMOBns2iMpKqEDjPx9Y0XGRo1N9k8PLAjKKJptOr-Z8alVo9XEKiMQHgzBDFf98K8HxiN7qGSqLnraTYpc8TgpJZx2aDl2oVPaBqaXncH5kekPgxf0kbNjx5cFSqykAIQ0tLPLfwA5U6W0KGk7TZl8wObfV92gvKxW9pE60fxfk65rNUgOX87oTHm439cAgDM"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR28AkYrOXUeOYy8RCXb1ZLvPbXjmQtJ9X0yJtcbm30Kszywxwu1SXruXrWL_A-MqkHhQKaCJPYp3dZeRXrGSqZ5kL4NmuYuw6JWvLuyU8vHmPDBnU2k2LLGU8jUVnq5tu-iZQ6S9lTmq6q70a-B2AHNrrWLy7jjxnB13g_kEEz0RMNZbgAxIDeUkfpiUnsdXab6OR-uMygEGMo7d_wpKmF4dN9Y7oFHrWvKJHp3DC0s-lV8i4EaPPXsXUJkpHev_Lyl3bEQdXEFo"/>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: -this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</div>
+<p class="mt-2 text-gray-600 dark:text-gray-400">An interactive dashboard for visualizing complex datasets using D3.js, providing insightful analytics. This project honed my ability to transform raw data into understandable and actionable visual insights.</p>
+<div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-4">Case Study</h4>
+<div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-md">
+<p class="text-sm text-gray-600 dark:text-gray-400">This case study details the process of designing and building the data visualization dashboard, highlighting the challenges faced and the solutions implemented to handle large-scale data effectively.</p>
+<a class="inline-flex items-center mt-3 font-semibold text-primary text-sm hover:underline" href="#"> Read Full Case Study <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+<ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+<li>Data Transformation &amp; Parsing</li>
+<li>Interactive Chart Design</li>
+<li>SVG Manipulation with D3.js</li>
+<li>Handling Large Datasets</li>
+</ul>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">D3.js</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">JavaScript</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">REST APIs</span>
+</div>
+</div>
+<a class="inline-flex items-center mt-6 font-semibold text-primary hover:underline" href="#"> Learn More <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">
+<span class="material-symbols-outlined text-white text-xs">robot_2</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+<h3 class="text-2xl font-bold text-primary dark:text-primary-light">AI-Powered Chatbot</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Fall 2023 - Venturing into Artificial Intelligence</p>
+<div class="relative group">
+<div class="carousel w-full overflow-x-auto flex rounded-md mb-2">
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAeG7Sk4nLwfZHHysQF1naQL6W5Rxjzx3RdCzqZv1YOE0vQ-2YmQq_Vd1R4eCO47gH-sBHn8Abcwj0-VQSoy6dB6zkUZBV4LSZpbsur3ZCPJPtmaDAIu1RkI6-peGNflSoGHL3f1UbxDPcO-_nER_4uLCHCGARND3qtkhTL7Q26FyzVH74ig3veP57incGFzqyZHo9ZnPbDXvLV4WN4bbJ7WXDfycHoJM9aNYpDdxDGAU75g4iAoHBae2Uf46ZYzAQ7FdJLiRTols"/>
+</div>
+<div class="carousel-item flex-none w-full h-64">
+<img alt="Project screenshot 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUp-TThjZuDR9AJPVALXMRmnzo1NwtUAf1XFkayvDwIlBeIBaDIbcbkVwUounjmUlIYg66XLweEj1mjMbc8vq5PtCaUkY1KFGaRgRivO2Ss5paujaPc51go0GO3TdX5L5veM1WNH9-hVTOms-D9XRwFVhyv1452YNW8vshNgxjtGwyiQfqDObwOhCvEnJO298Jn8p4cF-FBzvXs4_2ruR5CnfUMbUBMa8SrwevEo9qqrDK53DXdwN27aoVl0ciNquHGR-NC5zK0-o"/>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: -this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+<button class="bg-black/50 text-white p-2 rounded-full" onclick="this.closest('.relative').querySelector('.carousel').scrollBy({left: this.closest('.relative').querySelector('.carousel-item').offsetWidth, behavior: 'smooth'})"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+</div>
+</div>
+<p class="mt-2 text-gray-600 dark:text-gray-400">A conversational AI built with Python &amp; TensorFlow. Capable of understanding and responding to natural language queries. This project was my introduction to machine learning principles and natural language processing.</p>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+<ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+<li>Natural Language Processing (NLP)</li>
+<li>Machine Learning Model Training</li>
+<li>Deep Learning (Neural Networks)</li>
+<li>Python for Data Science</li>
+</ul>
+</div>
+<div class="mt-4">
+<h4 class="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Python</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">TensorFlow</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Keras</span>
+<span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">NLTK</span>
+</div>
+</div>
+<a class="inline-flex items-center mt-6 font-semibold text-primary hover:underline" href="#"> View Project <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        document.documentElement.classList.add('dark');
+
+    fetch("nav.html").then(response => response.text()).then(data => {document.getElementById("nav-placeholder").innerHTML = data;}).catch(err => console.error("Error loading navigation:", err));
+    </script>
+</body></html>

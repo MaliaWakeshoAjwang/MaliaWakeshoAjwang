@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Doe - Showcase Reel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        .project-hero {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+        .project-hero video,
+        .project-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .project-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            max-width: 800px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+        }
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }.scroll-container::-webkit-scrollbar {
+            display: none;
+        }.scroll-container {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .nav-button {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .nav-button:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans antialiased overflow-hidden">
+<div class="flex min-h-screen">
+    <div id="nav-placeholder"></div>
+<aside class="w-1/4 lg:w-1/5 xl:w-1/6 p-8 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800 fixed h-full">
+<div>
+<a class="text-xl font-bold" href="/">Alex Doe</a>
+<p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Computer Science Student &amp; Aspiring Software Engineer.</p>
+<nav class="mt-12">
+<ul>
+<li><a class="font-bold text-lg block text-primary dark:text-primary" href="#">Showcase Reel</a></li>
+<li><a class="font-bold text-lg block mt-4 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="font-bold text-lg block mt-4 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Resume</a></li>
+<li><a class="font-bold text-lg block mt-4 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</nav>
+</div>
+<div class="text-xs text-gray-500">© 2024</div>
+</aside>
+<main class="w-3/4 lg:w-4/5 xl:w-5/6 ml-auto relative">
+<div class="scroll-container">
+<section class="project-hero" id="project-chatbot">
+<video autoplay="" loop="" muted="" playsinline="" src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-software-with-numbers-and-data-27806-large.mp4"></video>
+<div class="project-content">
+<h2 class="text-5xl font-display font-bold mb-4">AI-Powered Chatbot</h2>
+<p class="text-xl leading-relaxed">Revolutionizing customer service with an intelligent chatbot capable of understanding and responding to natural language queries. This project significantly reduced inquiry response times and improved user satisfaction by providing instant, accurate information.</p>
+</div>
+</section>
+<section class="project-hero" id="project-ecommerce">
+<video autoplay="" loop="" muted="" playsinline="" src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-showing-a-new-piece-of-jewelry-to-her-customer-17482-large.mp4"></video>
+<div class="project-content">
+<h2 class="text-5xl font-display font-bold mb-4">E-commerce Platform</h2>
+<p class="text-xl leading-relaxed">Developed a robust, scalable e-commerce solution that empowered small businesses to launch their online stores quickly. Features included a secure payment gateway, intuitive product management, and a seamless shopping experience, leading to a 30% increase in sales for pilot users.</p>
+</div>
+</section>
+<section class="project-hero" id="project-fitness">
+<video autoplay="" loop="" muted="" playsinline="" src="https://assets.mixkit.co/videos/preview/mixkit-woman-doing-exercises-on-a-mat-in-a-park-5231-large.mp4"></video>
+<div class="project-content">
+<h2 class="text-5xl font-display font-bold mb-4">Mobile Fitness App</h2>
+<p class="text-xl leading-relaxed">A user-friendly mobile application designed to help individuals track their fitness goals and progress. This app fostered a more active community by providing personalized workout plans and motivational insights, resulting in sustained user engagement and improved health outcomes.</p>
+</div>
+</section>
+<section class="project-hero" id="project-dashboard">
+<video autoplay="" loop="" muted="" playsinline="" src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-man-working-on-a-laptop-4481-large.mp4"></video>
+<div class="project-content">
+<h2 class="text-5xl font-display font-bold mb-4">Data Visualization Dashboard</h2>
+<p class="text-xl leading-relaxed">Created an interactive data visualization dashboard that transformed complex datasets into actionable insights. This tool enabled stakeholders to make data-driven decisions faster, improving operational efficiency and identifying key trends within their market.</p>
+</div>
+</section>
+<section class="project-hero" id="project-portfolio">
+<img alt="Personal Portfolio Website Thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApugU9MOfHR9l7lAx5sr4mBXoMLWnkVqRYfTHlnnQteKyPyKftma1hlCnIOMkvtgrn8-i6ttFkhPGon9DCy0p_cKlwo8YT-3p6baLcHh_j4QS7Dvs51bYfbyXnjLEVE9EEexguiGXTIOAMXNAMofJPxa8vt3ebEYtmHR_uOJzbvKNEVDKYdiBV3SnJ0zqb0klwMkLqmq40RE_OBAqclC0iWjWA_uMhDeJ7JHuui214aXPSmsjMIw-_ju69Z3XKolPHEp6_nbVTxjk"/>
+<div class="project-content">
+<h2 class="text-5xl font-display font-bold mb-4">Personal Portfolio Website</h2>
+<p class="text-xl leading-relaxed">This very site is a testament to clean design and effective communication. It serves as a personal brand statement, showcasing my skills and projects in an engaging and accessible format, helping me connect with potential employers and collaborators.</p>
+</div>
+</section>
+</div>
+<div class="absolute top-1/2 -translate-y-1/2 left-4 z-30 flex flex-col gap-4 opacity-70">
+<button class="nav-button bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg text-primary" onclick="scrollToProject('project-chatbot')">
+<span class="material-symbols-outlined">circle</span>
+</button>
+<button class="nav-button bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg text-gray-400 hover:text-primary" onclick="scrollToProject('project-ecommerce')">
+<span class="material-symbols-outlined">circle</span>
+</button>
+<button class="nav-button bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg text-gray-400 hover:text-primary" onclick="scrollToProject('project-fitness')">
+<span class="material-symbols-outlined">circle</span>
+</button>
+<button class="nav-button bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg text-gray-400 hover:text-primary" onclick="scrollToProject('project-dashboard')">
+<span class="material-symbols-outlined">circle</span>
+</button>
+<button class="nav-button bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg text-gray-400 hover:text-primary" onclick="scrollToProject('project-portfolio')">
+<span class="material-symbols-outlined">circle</span>
+</button>
+</div>
+</main>
+</div>
+<script>
+    document.documentElement.classList.add('dark');
+    function scrollToProject(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        updateNavButtons(id);
+    }
+    function updateNavButtons(activeId) {
+        const buttons = document.querySelectorAll('.nav-button');
+        buttons.forEach(button => {
+            const projectId = button.onclick.toString().match(/'([^']+)'/)[1];
+            if (projectId === activeId) {
+                button.classList.add('text-primary');
+                button.classList.remove('text-gray-400');
+            } else {
+                button.classList.remove('text-primary');
+                button.classList.add('text-gray-400');
+            }
+        });
+    }
+    // Initial update based on first project
+    document.addEventListener('DOMContentLoaded', () => {
+        updateNavButtons('project-chatbot');
+    });
+    // Update nav buttons on scroll
+    const scrollContainer = document.querySelector('.scroll-container');
+    scrollContainer.addEventListener('scroll', () => {
+        const projects = document.querySelectorAll('.project-hero');
+        let currentActiveId = 'project-chatbot'; // Default to first project
+        for (const project of projects) {
+            const rect = project.getBoundingClientRect();
+            // A project is considered "active" if its top is within 50% of the viewport height from the top
+            if (rect.top >= -project.offsetHeight / 2 && rect.top <= window.innerHeight / 2) {
+                currentActiveId = project.id;
+                break;
+            }
+        }
+        updateNavButtons(currentActiveId);
+    });
+</script>
+
+</body></html>

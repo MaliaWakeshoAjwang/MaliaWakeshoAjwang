@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Doe - About Me</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    keyframes: {
+                        'progress-bar': {
+                            '0%': { width: '0%' },
+                            '100%': { width: 'var(--progress-width)' },
+                        },
+                    },
+                    animation: {
+                        'progress-bar': 'progress-bar 1.5s ease-out forwards',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .skill-bar-fill {
+            animation: progress-bar 1.5s ease-out forwards;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 1rem;
+            bottom: -1rem;
+            width: 2px;
+            background-color: #e5e7eb;}
+        .dark .timeline-item:before {
+            background-color: #374151;
+        }
+        .timeline-item:last-child:before {
+            display: none;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans antialiased">
+<div class="flex min-h-screen">
+<div id="nav-placeholder"></div>
+<main class="w-3/4 lg:w-4/5 xl:w-5/6 ml-auto p-8 lg:p-12">
+<div class="max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="text-5xl md:text-6xl font-display font-bold">About Me</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A little bit about my journey and expertise.</p>
+</header>
+<section class="mb-16 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+<div class="lg:col-span-1">
+<img alt="Professional headshot of Alex Doe" class="rounded-lg shadow-lg w-full object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpLskYPygyEjzBjK5BJQUGTKrS6_76xgVMNQgVd8W4JbqiBy8W46yfnvF0XLzInrrgVT7i4z_vWol5O7_RbCy31f2pu75tw1f7xyp-eTIc3GjAG2aRs0oBRzA_7xniU8xV_4DlQV-2YfNsQskPyDqM5Te4Q1gYa2mCvFqh5em747w2D8NKGe-n9RyitNxmA1E81Bov8xtZFSqX4-l60EgEs49RlgFZnqtZnadM-iyLHNtxP1sW4mcwXU4_gddMZqRiKQDDslho0yo"/>
+</div>
+<div class="lg:col-span-2">
+<h2 class="text-3xl font-display font-bold mb-4">My Story</h2>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                        I'm a passionate computer science student with a knack for creating elegant, efficient, and user-friendly digital experiences. My journey into the world of technology began with a fascination for how things work, which quickly evolved into a passion for building software that solves real-world problems.
+                    </p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        From developing full-stack web applications to exploring the depths of machine learning, I am constantly seeking new challenges and opportunities to learn and grow. I thrive in collaborative environments and am driven by the desire to use my skills to make a positive impact.
+                    </p>
+</div>
+</section>
+<section class="mb-16">
+<h2 class="text-4xl font-display font-bold mb-8 text-center">Skills &amp; Expertise</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="space-y-6 bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg">
+<h3 class="text-xl font-bold text-primary">Languages</h3>
+<div class="space-y-4">
+<div>
+<p class="font-medium">Python</p>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+<div class="bg-primary h-2.5 rounded-full skill-bar-fill" style="--progress-width: 90%;"></div>
+</div>
+</div>
+<div>
+<p class="font-medium">JavaScript/TypeScript</p>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+<div class="bg-primary h-2.5 rounded-full skill-bar-fill" style="--progress-width: 85%;"></div>
+</div>
+</div>
+<div>
+<p class="font-medium">Java</p>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+<div class="bg-primary h-2.5 rounded-full skill-bar-fill" style="--progress-width: 75%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6 bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg">
+<h3 class="text-xl font-bold text-primary">Frameworks &amp; Libraries</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">React</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Node.js</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">TensorFlow</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Tailwind CSS</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">D3.js</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Express.js</span>
+</div>
+</div>
+<div class="space-y-6 bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg">
+<h3 class="text-xl font-bold text-primary">Tools &amp; Platforms</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Git &amp; GitHub</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Docker</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">AWS</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">Figma</span>
+<span class="px-4 py-2 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors cursor-pointer">PostgreSQL</span>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-4xl font-display font-bold mb-8 text-center">Professional Journey</h2>
+<div class="relative pl-8">
+<div class="timeline-item relative pb-8">
+<div class="timeline-dot bg-primary text-white">
+<span class="material-symbols-outlined text-base">school</span>
+</div>
+<div class="pl-8">
+<p class="text-sm font-medium text-primary">2021 - Present</p>
+<h3 class="text-xl font-bold mt-1">B.S. in Computer Science - State University</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Pursuing a comprehensive curriculum with a focus on software engineering, algorithms, and artificial intelligence. Consistently maintaining a high GPA and actively participating in coding clubs.</p>
+</div>
+</div>
+<div class="timeline-item relative pb-8">
+<div class="timeline-dot bg-primary text-white">
+<span class="material-symbols-outlined text-base">work</span>
+</div>
+<div class="pl-8">
+<p class="text-sm font-medium text-primary">Summer 2023</p>
+<h3 class="text-xl font-bold mt-1">Software Engineering Intern - Tech Solutions Inc.</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Contributed to the development of a customer-facing web application using React and Node.js. Collaborated with a team of developers in an Agile environment, gaining hands-on experience in the full software development lifecycle.</p>
+</div>
+</div>
+<div class="timeline-item relative pb-8">
+<div class="timeline-dot bg-primary text-white">
+<span class="material-symbols-outlined text-base">code</span>
+</div>
+<div class="pl-8">
+<p class="text-sm font-medium text-primary">2022 - 2023</p>
+<h3 class="text-xl font-bold mt-1">Freelance Web Developer</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Designed and developed responsive websites for small businesses, focusing on creating clean, modern interfaces and improving user engagement. Managed projects from conception to deployment.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<script>
+    // This script can be removed if you prefer dark mode by default.
+    // Or you can add a theme toggle button.
+    // document.documentElement.classList.remove('dark'); 
+    fetch("nav.html").then(response => response.text()).then(data => {document.getElementById("nav-placeholder").innerHTML = data;}).catch(err => console.error("Error loading navigation:", err));
+</script>
+
+</body></html>
