@@ -134,7 +134,7 @@
 <div class="p-6">
 <h3 class="text-xl font-bold">AI-Powered Chatbot</h3>
 <p class="mt-2 text-gray-600 dark:text-gray-400">A conversational AI built with Python &amp; TensorFlow. Capable of understanding and responding to natural language queries.</p>
-<a class="inline-flex items-center mt-4 font-semibold text-primary hover:underline" href="#">
+<a class="inline-flex items-center mt-4 font-semibold text-primary hover:underline" href="project.html">
                             View Project <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
 </a>
 </div>
@@ -185,6 +185,20 @@
 </div>
 <script>
     document.documentElement.classList.add('dark');
-    fetch("nav.html").then(response => response.text()).then(data => {document.getElementById("nav-placeholder").innerHTML = data;}).catch(err => console.error("Error loading navigation:", err));
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+                // Highlight current page after nav is inserted
+                const currentPage = window.location.pathname.split("/").pop() || "index.html";
+                document.querySelectorAll(".nav-link").forEach(link => {
+                    const linkPage = link.getAttribute("href");
+                    if (linkPage === currentPage) {
+                        link.classList.add("text-primary", "dark:text-primary");
+                        link.classList.remove("text-gray-600", "dark:text-gray-400");
+                    }
+                });
+            })
+            .catch(err => console.error("Error loading navigation:", err));
 </script>
 </body></html>
