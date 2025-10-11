@@ -1,103 +1,145 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import './styles.css';
+import { useEffect } from 'react';
+import { timelineData } from './data';
+import Carousel from './carousel';
+import Link from 'next/link';
+
+interface TimelineItemProps {
+  icon: string;
+  title: string;
+  date: string;
+  description: string;
+  skills?: string[];
+  technologies?: string[];
+  carouselItems?: Array<{
+    type: 'image' | 'video';
+    src: string;
+    alt?: string;
+  }>;
+  testimonial?: {
+    quote: string;
+    author: string;
+    avatarUrl: string;
+  };
+  caseStudy?: {
+    description: string;
+  };
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({ 
+  icon, 
+  title, 
+  date, 
+  description, 
+  skills = [], 
+  technologies = [], 
+  carouselItems = [],
+  testimonial,
+  caseStudy
+}) => (
+  <div className="timeline-item">
+    <div className="timeline-marker">
+      <span className="material-symbols-outlined text-white text-xs">{icon}</span>
+    </div>
+    <div className="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 shadow-md">
+      <h3 className="text-2xl font-bold text-primary dark:text-primary-light">{title}</h3>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{date}</p>
+      
+      {carouselItems.length > 0 && <Carousel items={carouselItems} />}
+      
+      <p className="mt-2 text-gray-600 dark:text-gray-400">{description}</p>
+      
+      {testimonial && (
+        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-4">Client Testimonial</h4>
+          <blockquote className="border-l-4 border-primary pl-4 italic text-gray-600 dark:text-gray-400">
+            <p>{testimonial.quote}</p>
+            <footer className="mt-2 text-sm">
+              <div className="flex items-center">
+                <img
+                  src={testimonial.avatarUrl}
+                  alt="Client Company Logo"
+                  className="h-8 w-8 mr-2"
+                />
+                <span>{testimonial.author}</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      )}
+      
+      {caseStudy && (
+        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-4">Case Study</h4>
+          <div className="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-md">
+            <p className="text-sm text-gray-600 dark:text-gray-400">{caseStudy.description}</p>
+            <a className="inline-flex items-center mt-3 font-semibold text-primary text-sm hover:underline" href="#">
+              Read Full Case Study <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+      )}
+      
+      {skills.length > 0 && (
+        <div className="mt-4">
+          <h4 className="font-semibold text-gray-700 dark:text-gray-300">Skills Learned:</h4>
+          <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm">
+            {skills.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
+      {technologies.length > 0 && (
+        <div className="mt-4">
+          <h4 className="font-semibold text-gray-700 dark:text-gray-300">Technologies:</h4>
+          <div className="flex flex-wrap gap-2 mt-1">
+            {technologies.map((tech, index) => (
+              <span key={index} className="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <Link 
+        href={`/project/${title.toLowerCase().replace(/ /g, '-')}`}
+        className="inline-flex items-center mt-6 font-semibold text-primary hover:underline"
+      >
+        View Project <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+      </Link>
+    </div>
+  </div>
+);
+
+export default function Timeline() {
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen">
+      <div id="nav-placeholder"></div>
+      <main className="w-4/5 lg:w-5/6 xl:w-11/12 ml-auto p-8 lg:p-12">
+        <div className="max-w-4xl mx-auto">
+          <header className="mb-12">
+            <h1 className="text-5xl md:text-6xl font-display font-bold" style={{ fontFamily: 'var(--font-playfair-display)' }}>Timeline of Growth</h1>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+              A journey through my development as a software engineer, highlighting key projects and the skills I've gained along the way.
+            </p>
+          </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="space-y-12">
+            {timelineData.map((item, index) => (
+              <TimelineItem key={index} {...item} />
+            ))}
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

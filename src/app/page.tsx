@@ -1,103 +1,80 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [showProjectCard, setShowProjectCard] = useState(true);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const menuItems = [
+    { name: 'Projects', href: '/project' },
+    { name: 'About', href: '/about' },
+    { name: 'Resume', href: '/resume' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
+  return (
+    <div className="flex items-center justify-center min-h-screen relative">
+      {/* Main Navigation Menu */}
+      <nav>
+        <ul>
+          {menuItems.map((item, index) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className={`menu-item text-6xl md:text-8xl lg:text-9xl font-bold block text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-600 transition-all duration-300 hover:translate-x-2 ${
+                  index > 0 ? 'mt-4' : ''
+                }`}
+                style={{ fontFamily: 'var(--font-playfair-display)' }}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Project Card Overlay */}
+      {showProjectCard && (
+        <div className="absolute top-8 right-8 bg-gray-800 dark:bg-gray-900 text-white p-4 rounded-lg shadow-2xl w-80 flex items-start space-x-4 animate-pulse hover:scale-105 transition-transform duration-300">
+          <img
+            alt="Project thumbnail"
+            className="w-20 h-20 object-cover rounded"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAeG7Sk4nLwfZHHysQF1naQL6W5Rxjzx3RdCzqZv1YOE0vQ-2YmQq_Vd1R4eCO47gH-sBHn8Abcwj0-VQSoy6dB6zkUZBV4LSZpbsur3ZCPJPtmaDAIu1RkI6-peGNflSoGHL3f1UbxDPcO-_nER_4uLCHCGARND3qtkhTL7Q26FyzVH74ig3veP57incGFzqyZHo9ZnPbDXvLV4WN4bbJ7WXDfycHoJM9aNYpDdxDGAU75g4iAoHBae2Uf46ZYzAQ7FdJLiRTols"
+          />
+          <div>
+            <p className="text-xs font-semibold text-blue-600">NEW PROJECT</p>
+            <h3 className="font-bold mt-1">AI-Powered Chatbot</h3>
+            <p className="text-sm mt-1">A conversational AI built with Python & TensorFlow.</p>
+            <Link
+              href="#"
+              className="inline-flex items-center mt-2 text-sm text-blue-600 font-semibold hover:underline"
+            >
+              View Project <span className="ml-1">→</span>
+            </Link>
+          </div>
+          <button
+            onClick={() => setShowProjectCard(false)}
+            className="absolute top-2 right-2 text-gray-400 hover:text-gray-200"
+            aria-label="Close project card"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 18L18 6M6 6l12 12"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
     </div>
   );
 }

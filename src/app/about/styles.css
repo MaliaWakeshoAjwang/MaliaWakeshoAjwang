@@ -1,0 +1,42 @@
+.skill-bar-fill {
+    width: 0%;
+    animation: progress-bar 1.5s ease-out forwards;
+}
+
+@keyframes progress-bar {
+    from {
+        width: 0%;
+    } to {
+        width: var(--progress-width);
+    }
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 1rem;
+    bottom: -1rem;
+    width: 2px;
+    background-color: #e5e7eb;
+}
+
+.dark .timeline-item:before {
+    background-color: #374151;
+}
+
+.timeline-item:last-child:before {
+    display: none;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,103 +1,113 @@
-import Image from "next/image";
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const ResumePage: NextPage = () => {
+    return (
+        <>
+            <Head>
+                <title>Alex Doe - Resume</title>
+                <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+                <script dangerouslySetInnerHTML={{ __html: `
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                primary: "#3B82F6",
+                "background-light": "#F3F4F6",
+                "background-dark": "#111827",
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                display: ['Playfair Display', 'serif'],
+            },
+            borderRadius: {
+                DEFAULT: "0.5rem",
+            },
+        },
+    },
+};
+` }} />
+            </Head>
+                        <div className="max-w-7xl mx-auto">
+                            <header className="mb-12 flex justify-between items-center">
+                                <div>
+                                    <h1 className="text-5xl md:text-6xl font-display font-bold">My Resume</h1>
+                                    <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">A detailed summary of my professional journey and qualifications.</p>
+                                </div>
+                                <a className="inline-flex items-center px-6 py-3 bg-primary text-black dark:text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors shadow-lg" href="#">
+                                    <span className="material-symbols-outlined mr-2"/>
+                                    Download PDF
+                                </a>
+                            </header>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                                <div className="lg:col-span-2 space-y-12">
+                                    <section>
+                                        <h2 className="text-3xl font-display font-bold mb-6 text-primary">Work Experience</h2>
+                                        <div className="space-y-8">
+                                            <div className="relative pl-8 border-l-2 border-gray-300 dark:border-gray-700">
+                                                <div className="absolute w-4 h-4 bg-primary rounded-full -left-2 top-1.5"></div>
+                                                <h3 className="text-xl font-bold">Software Engineer Intern</h3>
+                                                <p className="text-md font-medium text-gray-600 dark:text-gray-400">InnovateTech Solutions | Summer 2023</p>
+                                                <ul className="mt-2 list-disc list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                                    <li>Developed and maintained features for a large-scale web application using React and Node.js.</li>
+                                                    <li>Collaborated with a team of engineers to design and implement RESTful APIs.</li>
+                                                    <li>Wrote unit and integration tests to ensure code quality and reliability.</li>
+                                                </ul>
+                                            </div>
+                                            <div className="relative pl-8 border-l-2 border-gray-300 dark:border-gray-700">
+                                                <div className="absolute w-4 h-4 bg-primary rounded-full -left-2 top-1.5"></div>
+                                                <h3 className="text-xl font-bold">Web Developer (Freelance)</h3>
+                                                <p className="text-md font-medium text-gray-600 dark:text-gray-400">Self-Employed | 2021 - Present</p>
+                                                <ul className="mt-2 list-disc list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                                    <li>Designed and built custom websites for small businesses using HTML, CSS, and JavaScript.</li>
+                                                    <li>Managed project timelines and client communication to deliver high-quality products.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <h2 className="text-3xl font-display font-bold mb-6 text-primary">Education</h2>
+                                        <div className="space-y-8">
+                                            <div className="relative pl-8 border-l-2 border-gray-300 dark:border-gray-700">
+                                                <div className="absolute w-4 h-4 bg-primary rounded-full -left-2 top-1.5"></div>
+                                                <h3 className="text-xl font-bold">Bachelor of Science in Computer Science</h3>
+                                                <p className="text-md font-medium text-gray-600 dark:text-gray-400">State University | 2020 - 2024</p>
+                                                <p className="mt-2 text-gray-600 dark:text-gray-400">Minor in Mathematics. GPA: 3.8/4.0</p>
+                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Relevant Coursework: Data Structures, Algorithms, Artificial Intelligence, Database Systems.</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div className="space-y-12">
+                                    <section>
+                                        <h2 className="text-3xl font-display font-bold mb-6 text-primary">Technical Skills</h2>
+                                        <div className="space-y-4">
+                                            <div>
+                                                <h3 className="font-bold text-lg mb-2">Programming Languages</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">Python</span>
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">JavaScript</span>
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">TypeScript</span>
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">Java</span>
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">SQL</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h3 className="font-bold text-lg mb-2">Frameworks & Libraries</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700">React</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>        </>
+    );
+};
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+export default ResumePage;

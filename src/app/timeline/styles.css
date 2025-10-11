@@ -1,0 +1,49 @@
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0.25rem;
+    width: 2px;
+    height: 100%;
+    background-color: #D1D5DB;
+    border-radius: 9999px;
+    z-index: 0;
+}
+
+.timeline-item:last-child:before {
+    height: 50%;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #3B82F6;
+    border-radius: 9999px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-item.dark .timeline-item:before {
+    background-color: #4B5563;
+}
+
+.carousel {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    scroll-snap-align: start;
+}
