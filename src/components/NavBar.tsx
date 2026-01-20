@@ -38,11 +38,7 @@ const NavBar = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className={`nav-link font-bold text-lg block mt-4 transition-colors ${
-                        isActive
-                          ? 'text-blue-600'
-                          : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-600'
-                      }`}
+                      className={`nav-link font-bold text-lg block mt-4 transition-colors ${isActive ? 'text-blue-600' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-600' }`}
                     >
                       {item.name}
                     </Link>
