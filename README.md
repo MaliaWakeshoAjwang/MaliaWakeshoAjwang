@@ -31,7 +31,7 @@ Alongside my startup work, I also serve as a **Tech Consultant at the Emory Hatc
 ---
 
 ## 🌍 Beyond Code
-- ⚽ Football player in Denmark (ØKF ⚽ Copenhagen’s friendliest club)  
+- ⚽ Football player  
 - 🎧 Love podcasts & deep dive discussions  
 - 📖 Big fan of audiobooks (especially while walking)  
 
@@ -42,7 +42,7 @@ Alongside my startup work, I also serve as a **Tech Consultant at the Emory Hatc
 
 ---
 
-✨ *“Stay connected. Stay focused.”* – tagline for asoma
+✨ *“built for adhd brains”* – tagline for asoma
 
 <!--
 **MaliaWakeshoAjwang/MaliaWakeshoAjwang** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
